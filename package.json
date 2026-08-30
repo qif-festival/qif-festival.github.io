@@ -1,0 +1,21 @@
+{
+  "name": "qif-2026",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site du QiF 2026 — Queer interstellaire Festival, Villeurbanne, 12 septembre 2026",
+  "type": "module",
+  "scripts": {
+    "dev": "node tools/build.mjs --watch",
+    "build": "node tools/build.mjs && node tools/prerender.mjs",
+    "serve": "npx --yes serve dist -l 4173",
+    "og": "node tools/og.mjs"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.23.1",
+    "playwright": "^1.47.0"
+  }
+}

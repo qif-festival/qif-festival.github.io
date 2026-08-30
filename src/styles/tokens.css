@@ -1,0 +1,131 @@
+/* QIF — webfonts: Adelphe Trouble (Floreal, Fructidor, Germinal cuts) */
+/* Provided by the festival (uploads/webfonts.zip). woff2 only. */
+
+/* — Floreal: the workhorse cut. Titles-in-flow, labels, body-large. */
+@font-face { font-family: "Adelphe Trouble Floreal"; src: url("/fonts/adelphe-trouble-floreal-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Adelphe Trouble Floreal"; src: url("/fonts/adelphe-trouble-floreal-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Adelphe Trouble Floreal"; src: url("/fonts/adelphe-trouble-floreal-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Adelphe Trouble Floreal"; src: url("/fonts/adelphe-trouble-floreal-600-italic.woff2") format("woff2"); font-weight: 600; font-style: italic; font-display: swap; }
+@font-face { font-family: "Adelphe Trouble Floreal"; src: url("/fonts/adelphe-trouble-floreal-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Adelphe Trouble Floreal"; src: url("/fonts/adelphe-trouble-floreal-700-italic.woff2") format("woff2"); font-weight: 700; font-style: italic; font-display: swap; }
+
+/* — Fructidor: the display cut. Big wobbly headlines (QUEER, FESTIVAL, QiF). */
+@font-face { font-family: "Adelphe Trouble Fructidor"; src: url("/fonts/adelphe-trouble-fructidor-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Adelphe Trouble Fructidor"; src: url("/fonts/adelphe-trouble-fructidor-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Adelphe Trouble Fructidor"; src: url("/fonts/adelphe-trouble-fructidor-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Adelphe Trouble Fructidor"; src: url("/fonts/adelphe-trouble-fructidor-600-italic.woff2") format("woff2"); font-weight: 600; font-style: italic; font-display: swap; }
+@font-face { font-family: "Adelphe Trouble Fructidor"; src: url("/fonts/adelphe-trouble-fructidor-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Adelphe Trouble Fructidor"; src: url("/fonts/adelphe-trouble-fructidor-700-italic.woff2") format("woff2"); font-weight: 700; font-style: italic; font-display: swap; }
+
+/* — Germinal: secondary display cut ("la team", "la technique"). */
+@font-face { font-family: "Adelphe Trouble Germinal"; src: url("/fonts/adelphe-trouble-germinal-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Adelphe Trouble Germinal"; src: url("/fonts/adelphe-trouble-germinal-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Adelphe Trouble Germinal"; src: url("/fonts/adelphe-trouble-germinal-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Adelphe Trouble Germinal"; src: url("/fonts/adelphe-trouble-germinal-600-italic.woff2") format("woff2"); font-weight: 600; font-style: italic; font-display: swap; }
+@font-face { font-family: "Adelphe Trouble Germinal"; src: url("/fonts/adelphe-trouble-germinal-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Adelphe Trouble Germinal"; src: url("/fonts/adelphe-trouble-germinal-700-italic.woff2") format("woff2"); font-weight: 700; font-style: italic; font-display: swap; }
+
+/* QIF — color tokens. Exact values from the Figma "charte" + usage counts. */
+:root {
+  /* Base palette (la charte) */
+  --qif-pink: #F537AC;          /* rgb(245,55,172) — THE brand color */
+  --qif-blue: #88C0FF;          /* rgb(136,192,255) */
+  --qif-blue-light: #9BCAFF;    /* rgb(155,202,255) — gradient partner */
+  --qif-purple: #6F49BF;        /* rgb(111,73,191) */
+  --qif-lavender: #A67CFF;      /* rgb(166,124,255) */
+  --qif-purple-deep: #1F0653;   /* rgb(31,6,83) */
+  --qif-night: #0A0219;         /* rgb(10,2,25) — near-black */
+
+  /* Off-whites (never pure white in layouts) */
+  --qif-white: #F9F7FF;         /* rgb(249,247,255) — default text-on-gradient */
+  --qif-white-pink: #FFF0FE;    /* rgb(255,240,254) — shapes, stars, outlines */
+  --qif-white-warm: #FFF4FE;    /* rgb(255,244,254) — gradient start, cards */
+  --qif-pink-pale: #FFE2F4;     /* rgb(255,226,244) — story gradient start */
+  --qif-pink-paper: #FFECFE;    /* rgb(255,236,254) — grille schedule rows */
+  --qif-lilac-pale: #EBE2FF;    /* rgb(235,226,255) — strokes on light */
+  --qif-blue-pale: #E0EFFF;     /* pale blue — light-surface partner of pink-pale */
+
+  /* Accents */
+  --qif-pink-hot: #F3229E;      /* rgb(243,34,158) — pink text accents; rose foncé sur rose clair */
+  --qif-blue-deep: #1E4E9C;     /* bleu foncé — text on pale blue */
+
+  /* Semantic aliases */
+  --surface-page: var(--qif-white);
+  --surface-card: var(--qif-white-warm);
+  --surface-row: var(--qif-pink-paper);
+  --surface-pale-pink: var(--qif-pink-pale);   /* text: --qif-pink-hot */
+  --surface-pale-blue: var(--qif-blue-pale);   /* text: --qif-blue-deep */
+  --surface-night: var(--qif-night);
+  --text-on-gradient: var(--qif-white-pink);
+  --text-body: var(--qif-purple-deep);
+  --text-accent: var(--qif-pink-hot);
+  --text-inverse: var(--qif-white);
+  --link: var(--qif-pink-hot);
+  --link-hover: var(--qif-purple);
+}
+
+/* QIF — type tokens. Adelphe Trouble everywhere. */
+:root {
+  --font-display: "Adelphe Trouble Fructidor", "Adelphe Trouble Floreal", Georgia, serif;
+  --font-display-alt: "Adelphe Trouble Germinal", "Adelphe Trouble Floreal", Georgia, serif;
+  --font-body: "Adelphe Trouble Floreal", Georgia, serif;
+
+  /* Scale (poster-derived, per-surface; posters run far larger) */
+  --text-hero: clamp(64px, 9vw, 132px);     /* QUEER / FESTIVAL — Fructidor Bold */
+  --text-display: clamp(44px, 6vw, 80px);   /* section titles — Floreal SemiBold Italic */
+  --text-title: 32px;                        /* card / event titles */
+  --text-lead: 24px;                         /* program items, leads — Floreal */
+  --text-body: 18px;
+  --text-caption: 14px;
+  --text-micro: 12px;                        /* hex labels on charte */
+
+  --leading-display: 1.0;                    /* posters use lineHeight 100% */
+  --leading-body: 1.35;
+  --tracking-micro: 0.04em;
+}
+
+/* QIF — gradients, textures, motion. Exact stops from the Figma frames. */
+:root {
+  /* Signature vertical sky: pale pink → hot pink → blue (poster V4) */
+  --grad-sky: linear-gradient(179.33deg, var(--qif-white-warm) -1.02%, var(--qif-pink) 33.73%, var(--qif-blue) 63.06%);
+  /* Story / team variant: starts warmer, ends light blue */
+  --grad-sky-soft: linear-gradient(179.47deg, var(--qif-pink-pale) -1.17%, var(--qif-pink) 33.1%, var(--qif-blue-light) 68.9%);
+  /* Radial nebula (QiF mark bg, PP) : white core → blue → pink rim */
+  --grad-nebula: radial-gradient(closest-side at 50% 50%, var(--qif-white-warm) 0%, var(--qif-blue) 58.31%, var(--qif-pink) 100%);
+  /* Radial blob fill: pink core → blue */
+  --grad-blob: radial-gradient(120% 120% at 45.31% 58.55%, var(--qif-pink) 0%, var(--qif-blue) 83.65%);
+  /* Light sky (site web): white → pale pink → pale blue — no dark stops */
+  --grad-sky-pale: linear-gradient(179.33deg, var(--qif-white) 0%, var(--qif-pink-pale) 48%, var(--qif-blue-pale) 100%);
+  /* Grain: layer over any gradient, mix-blend color-burn */
+  --noise-url: url("/assets/noise.png"); /* @kind other */
+
+  --radius-none: 0;          /* posts & cards are sharp-cornered */
+  --radius-full: 10000px;    /* circles (avatars, PP rond) */
+
+  --ring-photo: inset 0 0 0 4px #FFFFFF; /* @kind shadow */
+  --stroke-hairline: 0.5px solid #000000;  /* rare — instagram tile only */
+
+  --ease-drift: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+}
+
+/* Grain overlay helper — add class to a positioned container */
+.qif-noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: color-burn;
+  background: var(--noise-url) 50% 95% / cover no-repeat;
+}
+
+/* QIF — minimal base */
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text-body);
+  background: var(--surface-page);
+  line-height: var(--leading-body);
+}
+a { color: var(--link); text-decoration-color: color-mix(in oklab, var(--link) 40%, transparent); }
+a:hover { color: var(--link-hover); }
+::selection { background: var(--qif-pink); color: var(--qif-white-pink); }

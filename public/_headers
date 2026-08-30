@@ -1,0 +1,16 @@
+# Cloudflare Pages — en-têtes de réponse.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# app.js / app.css n'ont pas de hash dans leur nom : ne pas les figer en cache,
+# sinon un redéploiement ne serait pas vu par les navigateurs déjà venus.
+/app.js
+  Cache-Control: public, max-age=0, must-revalidate
+/app.css
+  Cache-Control: public, max-age=0, must-revalidate
+
+/fonts/*
+  Cache-Control: public, max-age=2592000
+/assets/*
+  Cache-Control: public, max-age=2592000
