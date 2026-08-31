@@ -39,11 +39,11 @@ body{width:1200px;height:630px;overflow:hidden;background:var(--grad-sky-pale);
 </style></head><body>
 <img class="alien a1" src="/assets/alien2.png" alt="">
 <img class="alien a2" src="/assets/alien2.png" alt="">
-<div class="badge">Sam. 12 SEPT. 2026 — Villeurbanne</div>
+<div class="badge">Sam. 12 SEPT. 2026 · Villeurbanne</div>
 <div class="l1">QUE·ER</div>
 <div class="l2">interstellaire</div>
 <div class="l3">FESTIVAL</div>
-<div class="foot">de 15H00 à 2H00 — 36 rue Emile Decorps</div>
+<div class="foot">de 15H00 à 2H00 · 36 rue Emile Decorps</div>
 </body></html>`;
 
 const server = createServer((req, res) => {
@@ -72,4 +72,4 @@ server.close();
 
 const out = path.join(PUB, "assets/og.jpg");
 await writeFile(out, buf);
-console.log("og.jpg écrit —", (buf.length / 1024).toFixed(0), "Ko");
+console.log("og.jpg écrit :", (buf.length / 1024).toFixed(0), "Ko");
