@@ -30,7 +30,7 @@ function Infos() {
         </div>
         <div style={{ marginTop: 30, transform: "rotate(-0.4deg)" }}>
           <iframe
-            title="Carte — 36 rue Emile Decorps, Villeurbanne, métropole de Lyon"
+            title="Carte : 36 rue Emile Decorps, Villeurbanne, métropole de Lyon"
             src="https://www.openstreetmap.org/export/embed.html?bbox=4.8909%2C45.7523%2C4.9069%2C45.7623&layer=mapnik&marker=45.75728%2C4.89891"
             style={{ display: "block", width: "100%", height: 340, border: "4px solid var(--qif-white)", boxSizing: "border-box", filter: "grayscale(1) sepia(1) hue-rotate(270deg) saturate(2.2) brightness(1.06)" }}
             className="qif-map-frame"

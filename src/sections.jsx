@@ -117,7 +117,7 @@ function Hero() {
             On transcrit le titre en texte hors du flux et on masque le décor
             aux technologies d'assistance, qui l'épelaient. Rien ne bouge. */}
         <h1 style={{ margin: 0, font: "inherit", color: "inherit" }}>
-          <span className="qif-sr">QiF 2026 — Queer interstellaire Festival</span>
+          <span className="qif-sr">Queer Interstellaire Festival 2026</span>
           <div aria-hidden="true" style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(76px,15vw,212px)", lineHeight: 0.84, color: "var(--qif-pink)", letterSpacing: "-0.01em", marginBottom: 10 }}>QUE·ER</div>
           <div aria-hidden="true" style={{ fontFamily: "var(--font-display-alt)", fontStyle: "italic", fontSize: "clamp(46px,10vw,142px)", lineHeight: 1.06, backgroundImage: "var(--grad-blob)", WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent", color: "var(--qif-pink)", transform: "rotate(-2.5deg)", margin: "-0.08em 0" }}>interstellaire</div>
           <div aria-hidden="true" style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(76px,11vw,156px)", lineHeight: 0.84, color: "var(--qif-pink)", letterSpacing: "-0.01em", paddingTop: 18 }}>FESTIVAL</div>
@@ -312,7 +312,7 @@ function MixPreview({ url, nom }) {
           autoplay demarre la lecture pendant que le geste utilisateur est
           encore valide, sans attendre le chargement du script d'API. */}
       {monte && (
-        <iframe ref={iframe} title={"Lecteur Mixcloud — " + nom.replace(/\n/g, " ")}
+        <iframe ref={iframe} title={"Lecteur Mixcloud : " + nom.replace(/\n/g, " ")}
           src={"https://player-widget.mixcloud.com/?feed=" + encodeURIComponent(new URL(url).pathname) + "&mini=1&hide_cover=1&light=1&autoplay=1"}
           allow="autoplay" aria-hidden="true" tabIndex={-1}
           style={{ position: "fixed", left: -10000, top: 0, width: 400, height: 60, border: 0 }} />
