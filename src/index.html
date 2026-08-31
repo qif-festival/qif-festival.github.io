@@ -14,8 +14,13 @@
 <meta name="google-site-verification" content="4S5GJ32ZhyCV4RTiyL6OkOVzM2tb4eSfO7yFYGkzZFE">
 
 <meta name="theme-color" content="#F3229E">
+<!-- Google ignore les favicons SVG et cherche d'abord /favicon.ico a la racine :
+     sans lui, les resultats de recherche affichent l'icone generique. L'ICO
+     embarque du PNG en 16/32/48, le SVG reste pour les navigateurs modernes. -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/assets/qif-logo.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/assets/qif-logo.svg">
+<link rel="icon" href="/assets/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
@@ -31,6 +36,16 @@
 <!-- Préchargement des deux coupes réellement visibles au-dessus de la ligne de flottaison -->
 <link rel="preload" href="/fonts/adelphe-trouble-fructidor-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/adelphe-trouble-floreal-700-italic.woff2" as="font" type="font/woff2" crossorigin>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Queer Interstellaire Festival",
+  "alternateName": ["QiF", "QiF 2026"],
+  "url": "%SITE_URL%/"
+}
+</script>
 
 <script type="application/ld+json">
 {
