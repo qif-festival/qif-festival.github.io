@@ -24,40 +24,38 @@ function Infos() {
           </div>
           <div>
             <div style={{ fontWeight: 700, fontSize: 26 }}>Où ?</div>
-            <div>36 rue Emile Decorps, Villeurbanne<br />(proche Pôle Pixel)</div>
+            <div>36 rue Emile Decorps, Villeurbanne,<br />métropole de Lyon (proche Pôle Pixel)</div>
             <Button size="md" href="https://www.google.com/maps/dir/?api=1&destination=36+rue+Emile+Decorps,+69100+Villeurbanne" target="_blank" rel="noreferrer" style={{ marginTop: 14, fontSize: 19, padding: "11px 22px" }}><img src={RES("../../assets/icons/directions.svg")} alt="" style={{ width: 22, height: 22, display: "block" }} />Y aller</Button>
           </div>
-          <div></div>
-          <div>
-            <div style={{ fontWeight: 700, fontSize: 26 }}></div>
-            <div></div>
-          </div>
         </div>
-        <div style={{ marginTop: 40, transform: "rotate(-0.4deg)" }}>
+        <div style={{ marginTop: 30, transform: "rotate(-0.4deg)" }}>
           <iframe
-            title="Carte — 36 rue Emile Decorps, Villeurbanne"
+            title="Carte — 36 rue Emile Decorps, Villeurbanne, métropole de Lyon"
             src="https://www.openstreetmap.org/export/embed.html?bbox=4.8909%2C45.7523%2C4.9069%2C45.7623&layer=mapnik&marker=45.75728%2C4.89891"
             style={{ display: "block", width: "100%", height: 340, border: "4px solid var(--qif-white)", boxSizing: "border-box", filter: "grayscale(1) sepia(1) hue-rotate(270deg) saturate(2.2) brightness(1.06)" }}
+            className="qif-map-frame"
             loading="lazy"
           ></iframe>
-          <div style={{ display: "flex", alignItems: "center", gap: 24, marginTop: 16, flexWrap: "wrap" }}>
-            <a href="https://www.openstreetmap.org/?mlat=45.75728&mlon=4.89891#map=16/45.75728/4.89891" target="_blank" rel="noreferrer"
-              style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 18, color: "var(--qif-pink-hot)" }}>
-              36 rue Emile Decorps, Villeurbanne (Pôle Pixel)
-            </a>
-          </div>
+          <a href="https://www.openstreetmap.org/?mlat=45.75728&mlon=4.89891#map=16/45.75728/4.89891" target="_blank" rel="noreferrer"
+            style={{ display: "inline-block", marginTop: 12, fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 18, color: "var(--qif-pink-hot)" }}>
+            36 rue Emile Decorps, Villeurbanne (Pôle Pixel)
+          </a>
         </div>
-        <div style={{ fontFamily: "var(--font-display-alt)", fontStyle: "italic", fontSize: "clamp(34px,4vw,54px)", lineHeight: 1, color: "var(--qif-pink-hot)", margin: "48px 0 22px" }}><span style={{ fontFamily: "var(--font-body)", fontSize: 26, fontStyle: "normal", fontWeight: 700 }}>Nos tarifs</span></div>
-        <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-          {[["réduit", "10€", "var(--qif-white)", "var(--qif-pink-hot)"], ["normal", "13,12€", "var(--qif-blue)", "var(--qif-white)"], ["soutien", "15€", "var(--qif-pink)", "var(--qif-white-pink)"], ["précaire", "sur demande", "var(--qif-white)", "var(--qif-blue-deep)"]].map(([label, price, bg, fg], i) => (
-            <div key={i} style={{ background: bg, color: fg, padding: "16px 26px", minWidth: 150, transform: "rotate(" + (i % 2 ? 1.2 : -1.2) + "deg)" }}>
-              <div style={{ fontFamily: "var(--font-display-alt)", fontStyle: "italic", fontSize: 24, lineHeight: 1 }}>{label}</div>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: price.length > 6 ? 24 : 40, lineHeight: 1.1, marginTop: 4 }}>{price}</div>
-            </div>
+        <div style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 26, lineHeight: 1.2, color: "var(--qif-pink-hot)", margin: "44px 0 18px" }}>Nos tarifs</div>
+        <div className="qif-tarifs" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 14, alignItems: "start" }}>
+          {/* Chemins écrits en clair : ces billets ont été ajoutés à la main, ils
+              ne viennent pas de l'export du design et ne sont donc pas dans
+              RESOURCES. Le préfixe BASE_PATH est appliqué au build sur le texte
+              du bundle, la forme "/assets/..." suffit. */}
+          {[["reduit", "Tarif réduit : 10 €"], ["normal", "Tarif normal : 13,12 €"], ["soutien", "Tarif soutien : 15 €"], ["precaire", "Tarif précaire : sur demande"]].map(([nom, texte], i) => (
+            // Le prix est dessiné dans le SVG : c'est l'alt qui porte
+            // l'information pour les moteurs et les lecteurs d'écran.
+            <img key={nom} src={"/assets/tickets/" + nom + ".svg"} alt={texte} width="519" height="291"
+              style={{ width: "100%", height: "auto", display: "block", transform: "rotate(" + (i % 2 ? 1 : -1) + "deg)" }} />
           ))}
         </div>
-        <div style={{ marginTop: 20, display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
-          <Button size="md" href="https://www.helloasso.com/associations/les-heures-joyeuxses-bar-associatif-feministe-et/evenements/qif-2026-queer-interstellaire-festival-open-air-2" target="_blank" rel="noreferrer">Prendre son billet sur HelloAsso</Button>
+        <div className="qif-tarifs-cta" style={{ marginTop: 22, display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
+          <Button size="md" href="https://www.helloasso.com/associations/les-heures-joyeuxses-bar-associatif-feministe-et/evenements/qif-2026-queer-interstellaire-festival-open-air-2" target="_blank" rel="noreferrer">Prendre mon billet</Button>
           <Button size="md" variant="ghost" href="https://www.helloasso.com/associations/les-heures-joyeuxses-bar-associatif-feministe-et/evenements/inscriptions-ateliers-qif-2026" target="_blank" rel="noreferrer" style={{ border: "3px dashed var(--qif-pink)", color: "var(--qif-pink-hot)" }}>Réserver un atelier</Button>
           <div style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 19, color: "var(--qif-pink-hot)", maxWidth: 420 }}>
             Les ateliers sont à réserver en plus de son billet.
@@ -113,35 +111,121 @@ function Equipe() {
   );
 }
 
-function Editions() {
-  const all = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"].map((n) => "../../assets/photos/qif-" + n + ".jpg");
-  const rowA = all.slice(0, 6), rowB = all.slice(6);
-  const Row = ({ list, reverse, height }) => (
+function Lightbox({ photos, index, onClose, onGo }) {
+  const start = React.useRef(null);
+
+  // Clavier et verrou de défilement : montés uniquement tant que la visionneuse
+  // est ouverte, donc jamais pendant le pré-rendu.
+  React.useEffect(() => {
+    const scroll = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = scroll; };
+  }, []);
+  React.useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") onClose();
+      else if (e.key === "ArrowRight") onGo(1);
+      else if (e.key === "ArrowLeft") onGo(-1);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [onClose, onGo]);
+
+  // Le swipe est mesuré sur le fond : la photo est au milieu, le geste part
+  // souvent d'à côté d'elle.
+  const onTouchStart = (e) => { start.current = e.touches[0].clientX; };
+  const onTouchEnd = (e) => {
+    const from = start.current;
+    start.current = null;
+    if (from === null) return;
+    const dx = e.changedTouches[0].clientX - from;
+    if (Math.abs(dx) > 45) onGo(dx < 0 ? 1 : -1);
+  };
+
+  const nav = { position: "absolute", top: "50%", transform: "translateY(-50%)", width: 52, height: 52, display: "flex", alignItems: "center", justifyContent: "center", border: "none", background: "var(--qif-pink)", color: "var(--qif-white-pink)", fontFamily: "var(--font-body)", fontSize: 30, lineHeight: 1, cursor: "pointer" };
+
+  return (
+    <div className="qif-lb" role="dialog" aria-modal="true" aria-label="Photos des anciennes éditions"
+      onClick={onClose} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}
+      style={{ position: "fixed", inset: 0, zIndex: 100, background: "rgba(10,2,25,0.93)", display: "flex", alignItems: "center", justifyContent: "center", padding: "72px 16px 64px", touchAction: "pan-y" }}>
+      <button type="button" aria-label="Fermer" onClick={onClose}
+        style={{ position: "absolute", top: 14, right: 14, width: 46, height: 46, border: "none", background: "var(--qif-pink)", color: "var(--qif-white-pink)", fontFamily: "var(--font-body)", fontSize: 26, lineHeight: 1, cursor: "pointer" }}>&times;</button>
+      <button type="button" className="qif-lb-nav" aria-label="Photo précédente" style={{ ...nav, left: 14 }}
+        onClick={(e) => { e.stopPropagation(); onGo(-1); }}>&#8249;</button>
+      <img src={RES(photos[index])} alt={"QiF, ancienne édition du festival à Villeurbanne (" + (index + 1) + " sur " + photos.length + ")"}
+        onClick={(e) => e.stopPropagation()}
+        style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", display: "block", boxShadow: "0 0 0 4px var(--qif-white-pink)" }} />
+      <button type="button" className="qif-lb-nav" aria-label="Photo suivante" style={{ ...nav, right: 14 }}
+        onClick={(e) => { e.stopPropagation(); onGo(1); }}>&#8250;</button>
+      <div style={{ position: "absolute", bottom: 20, left: 0, right: 0, textAlign: "center", fontFamily: "var(--font-body)", fontSize: 17, color: "var(--qif-white-pink)" }}>
+        {index + 1} / {photos.length}
+      </div>
+    </div>
+  );
+}
+
+const EDITIONS = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"].map((n) => "../../assets/photos/qif-" + n + ".jpg");
+
+// Définie au niveau du module, pas dans Editions : une fonction recréée à
+// chaque rendu changerait d'identité à l'ouverture de la visionneuse, React
+// remonterait la galerie et le défilement repartirait de zéro.
+function EditionsRow({ list, offset, reverse, height, onOpen }) {
+  return (
     <div style={{ overflow: "hidden" }}>
       <div className="qif-gal" style={{ animationDirection: reverse ? "reverse" : "normal" }}>
         {list.concat(list).map((src, i) => (
-          <img key={i} src={RES(src)} alt="Photo d'une ancienne édition" style={{ height }} />
+          // La seconde moitié n'est que le doublon qui boucle le défilement :
+          // hors du parcours clavier et du lecteur d'écran.
+          <img key={i} src={RES(src)} alt={i < list.length ? "QiF, ancienne édition du festival à Villeurbanne" : ""} style={{ height }}
+            role="button" tabIndex={i < list.length ? 0 : -1} aria-hidden={i >= list.length ? "true" : undefined}
+            onClick={() => onOpen(offset + (i % list.length))}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onOpen(offset + (i % list.length)); } }} />
         ))}
       </div>
     </div>
   );
+}
+
+function Editions() {
+  const rowA = EDITIONS.slice(0, 6), rowB = EDITIONS.slice(6);
+  const [open, setOpen] = React.useState(null);
+  const go = React.useCallback((step) => setOpen((i) => (i + step + EDITIONS.length) % EDITIONS.length), []);
+  const close = React.useCallback(() => setOpen(null), []);
+
   return (
+    <React.Fragment>
+      {/* L'alien chevauche la frontière entre la section équipe et celle-ci. Il
+          vit donc en dehors des deux, dans une boîte de hauteur nulle : dedans,
+          l'overflow:hidden de la section (nécessaire aux bandes défilantes) le
+          rognerait net, et il n'occupe ainsi aucune place dans le flux.
+          Ancré sur la colonne de contenu et pas sur la pleine largeur, sinon il
+          file dans la marge droite sur grand écran. Le fichier porte une large
+          marge transparente : l'encre occupe 491x307 px sur 620x486, à 66 px du
+          haut. Le top négatif part du calcul qui pose le centre de l'encre sur
+          la frontière (-96), abaissé de 20px à la demande. La rotation vit dans
+          les keyframes : une transform inline serait écrasée par l'animation. */}
+      <div style={{ position: "relative", height: 0, zIndex: 2 }}>
+        <div style={{ maxWidth: 1020, margin: "0 auto", padding: "0 24px", position: "relative" }}>
+          <img className="qif-alien-ed" src={RES("../../assets/alien2.png")} alt="" style={{ position: "absolute", right: -12, top: -76, width: 270, animation: "qif-float-r 6s ease-in-out infinite", pointerEvents: "none" }} />
+        </div>
+      </div>
     <section id="editions" style={{ position: "relative", background: "var(--qif-white)", padding: "90px 0 100px", overflow: "hidden" }}>
-      <img className="qif-saucer-ed" src={RES("../../assets/soucoupe.png")} alt="" style={{ position: "absolute", right: "5%", top: 26, width: 180, transform: "rotate(6deg)", animation: "qif-float 6s ease-in-out infinite", pointerEvents: "none" }} />
-      <div style={{ maxWidth: 1020, margin: "0 auto", padding: "0 24px" }}>
+      <div style={{ maxWidth: 1020, margin: "0 auto", padding: "0 24px", position: "relative" }}>
         <h2 style={{ margin: 0, font: "inherit", color: "inherit" }}><DisplayTitle top="" middle="anciennes éditions" bottom="" align="left" scale={0.9} color="var(--qif-pink)" style={{ marginBottom: 44 }} /></h2>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-        <Row list={rowA} height={250} />
-        <Row list={rowB} reverse height={200} />
+        <EditionsRow list={rowA} offset={0} height={250} onOpen={setOpen} />
+        <EditionsRow list={rowB} offset={rowA.length} reverse height={200} onOpen={setOpen} />
       </div>
+      {open !== null && <Lightbox photos={EDITIONS} index={open} onClose={close} onGo={go} />}
     </section>
+    </React.Fragment>
   );
 }
 
 function SiteFooter() {
   return (
-    <GradientPanel variant="pale" noise={false} style={{ padding: "56px 24px 40px" }}>
+    <GradientPanel className="qif-footer" variant="pale" noise={false} style={{ padding: "56px 24px 40px" }}>
       <div className="qif-foot" style={{ maxWidth: 900, margin: "0 auto", display: "flex", alignItems: "center", gap: 30, flexWrap: "wrap" }}>
         <QifMark size={120} />
         <div style={{ fontFamily: "var(--font-body)", color: "var(--qif-pink-hot)", fontSize: 18, lineHeight: 1.5 }}>
@@ -158,11 +242,13 @@ function SiteFooter() {
   );
 }
 
-Object.assign(window, { Infos, Equipe, Editions, SiteFooter });
+Object.assign(window, { Infos, Equipe, Editions, EditionsRow, Lightbox, SiteFooter });
 
 export {
   Infos,
   Equipe,
+  Lightbox,
+  EditionsRow,
   Editions,
   SiteFooter,
 };
